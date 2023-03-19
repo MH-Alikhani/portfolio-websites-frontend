@@ -1,0 +1,16 @@
+@import url("./assets/css/utils/variables.css");
+@import url("./assets/css/utils/animations.css");
+@import url("./assets/css/layouts/header.css");
+
+/* reset some defult styles */
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}

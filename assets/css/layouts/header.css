@@ -1,0 +1,208 @@
+/* hamburger menu start */
+.hamburger-menu {
+  position: fixed;
+  z-index: 200;
+  right: 5rem;
+  top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  transition: right 0.7s;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+.change .hamburger-menu {
+  right: 33rem;
+}
+/* 3line or x icon */
+.line {
+  width: 100%;
+  height: 0.2rem;
+  background-color: #fff;
+  box-shadow: 0 0.1rem 0.2rem var(--shadow-02);
+}
+.change .line {
+  background-color: var(--shadow-08);
+}
+.change .line-1 {
+  transform: rotate(45deg) translate(0.3rem, 0.8rem);
+}
+.change .line-2 {
+  opacity: 0;
+  visibility: hidden;
+}
+.change .line-3 {
+  transform: rotate(-45deg) translate(0.3rem, -0.8rem);
+}
+.hamburger-menu span {
+  position: absolute;
+  left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 4rem;
+  opacity: 0;
+  color: #fff;
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  font-family: var(--font-primary), serif;
+  visibility: hidden;
+  transition: all 0.2s;
+  background-color: var(--color-primary);
+}
+.change .hamburger-menu:hover span {
+  opacity: 1;
+  visibility: visible;
+}
+.hamburger-menu span::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-right: 1rem solid var(--color-primary);
+}
+/* hamburger menu end */
+
+/* hero part */
+.header {
+  position: relative;
+  perspective: 100rem;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+/* hero background */
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--shadow-08);
+}
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  object-fit: cover;
+  animation: 25s linear infinite both alternate scale;
+}
+
+/* hero content start*/
+.banner {
+  position: absolute;
+  left: 15%;
+  top: 30%;
+}
+.banner h1 {
+  color: #fff;
+  width: 50%;
+  opacity: 0;
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 9rem;
+  letter-spacing: 0.2rem;
+  font-family: var(--font-primary), serif;
+  text-shadow: 0 0.3rem 0.5rem var(--shadow-04);
+  animation: moveBanner 1s 0.5s forwards;
+}
+.banner p {
+  width: 70%;
+  opacity: 0;
+  color: #fff;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.1rem;
+  animation: moveBanner 1s 0.7s forwards;
+  font-family: var(--font-secondary), serif;
+  text-shadow: 0 0.3rem 0.5rem var(--shadow-04);
+}
+.banner button {
+  opacity: 0;
+  width: 25rem;
+  height: 7rem;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  animation: moveBanner 1s 0.9s forwards;
+  background-color: var(--color-secondary);
+  font-family: var(--font-tertiary), serif;
+  box-shadow: 0 0.3rem 0.5rem var(--shadow-04);
+  text-shadow: 0 0.2rem 0.4rem var(--shadow-02);
+}
+/* hero content end*/
+
+/* menu start */
+.sidebar {
+  position: fixed;
+  right: -40rem;
+  z-index: 100;
+  top: 0;
+  width: 40rem;
+  height: 100vh;
+  background-color: #fff;
+  transition: right 0.5s;
+}
+.change .sidebar {
+  right: 0;
+}
+.menu {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.menu-item {
+  text-align: center;
+}
+.menu-link {
+  position: relative;
+  color: #555;
+  font-size: 4rem;
+  font-family: var(--font-primary), serif;
+}
+.menu-link::before {
+  content: attr(data-content);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  color: #c29525;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease-in-out;
+}
+.menu-link:hover::before {
+  width: 100%;
+}
+/* social media cions in the menu */
+.social-media {
+  position: absolute;
+  bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.social-media i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.2rem;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #777;
+  transition: background-color 0.3s;
+}
+.social-media i:hover {
+  background-color: var(--color-secondary);
+}
+/* menu end */
