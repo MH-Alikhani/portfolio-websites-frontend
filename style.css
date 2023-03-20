@@ -1,6 +1,7 @@
 @import url("./assets/css/utils/variables.css");
 @import url("./assets/css/utils/animations.css");
 @import url("./assets/css/layouts/header.css");
+@import url("./assets/css/layouts/about-us.css");
 
 /* reset some defult styles */
 * {

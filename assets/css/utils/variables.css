@@ -1,12 +1,12 @@
 :root {
-  --font-primary: "Baloo Da 2";
-  --font-secondary: "Josefin Slab";
-  --font-tertiary: "Muli";
+  --font-primary: "Baloo Da 2", serif;
+  --font-secondary: "Josefin Slab", serif;
+  --font-tertiary: "Muli", serif;
 
   --shadow-02: rgba(0, 0, 0, 0.2);
   --shadow-04: rgba(0, 0, 0, 0.4);
   --shadow-08: rgba(0, 0, 0, 0.8);
 
   --color-primary: #e2b646;
-  --color-secondary: #e2b646;
+  --color-secondary: #c29525;
 }

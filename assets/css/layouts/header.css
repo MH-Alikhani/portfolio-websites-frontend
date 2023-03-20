@@ -47,7 +47,7 @@
   color: #fff;
   font-size: 1.6rem;
   letter-spacing: 0.1rem;
-  font-family: var(--font-primary), serif;
+  font-family: var(--font-primary);
   visibility: hidden;
   transition: all 0.2s;
   background-color: var(--color-primary);
@@ -106,7 +106,7 @@
   font-weight: 300;
   line-height: 9rem;
   letter-spacing: 0.2rem;
-  font-family: var(--font-primary), serif;
+  font-family: var(--font-primary);
   text-shadow: 0 0.3rem 0.5rem var(--shadow-04);
   animation: moveBanner 1s 0.5s forwards;
 }
@@ -118,7 +118,7 @@
   margin-bottom: 3rem;
   letter-spacing: 0.1rem;
   animation: moveBanner 1s 0.7s forwards;
-  font-family: var(--font-secondary), serif;
+  font-family: var(--font-secondary);
   text-shadow: 0 0.3rem 0.5rem var(--shadow-04);
 }
 .banner button {
@@ -132,7 +132,7 @@
   text-transform: uppercase;
   animation: moveBanner 1s 0.9s forwards;
   background-color: var(--color-secondary);
-  font-family: var(--font-tertiary), serif;
+  font-family: var(--font-tertiary);
   box-shadow: 0 0.3rem 0.5rem var(--shadow-04);
   text-shadow: 0 0.2rem 0.4rem var(--shadow-02);
 }
@@ -142,8 +142,8 @@
 .sidebar {
   position: fixed;
   right: -40rem;
-  z-index: 100;
   top: 0;
+  z-index: 100;
   width: 40rem;
   height: 100vh;
   background-color: #fff;
@@ -165,7 +165,7 @@
   position: relative;
   color: #555;
   font-size: 4rem;
-  font-family: var(--font-primary), serif;
+  font-family: var(--font-primary);
 }
 .menu-link::before {
   content: attr(data-content);
