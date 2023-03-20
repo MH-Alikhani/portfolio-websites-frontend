@@ -1,0 +1,90 @@
+.team {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 5rem 20rem 5rem;
+}
+
+/* cards */
+.cards-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8rem;
+  width: 100%;
+}
+.card {
+  width: 37rem;
+  height: 45rem;
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 4rem var(--shadow-04);
+}
+.card-img-wrapper {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  background-color: #262626;
+}
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s;
+}
+.card:hover .card-img-wrapper img {
+  opacity: 0.5;
+}
+
+/* info over cards */
+.card-info {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  padding: 2rem;
+  visibility: hidden;
+  transition: all 0.3s;
+  text-shadow: 0 0.2rem 0.5rem var(--shadow-04);
+}
+.card:hover .card-info {
+  opacity: 1;
+  bottom: 2rem;
+  visibility: visible;
+}
+.card-info h2 {
+  color: #eee;
+  font-weight: 300;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  font-family: var(--font-primary);
+}
+.card-info h3 {
+  font-size: 2rem;
+  color: #a52a2a;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-family: var(--font-tertiary);
+}
+.card-info p {
+  width: 80%;
+  color: #eee;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-primary);
+}
+.card-info button {
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  color: #eee;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+  border-radius: 0.3rem;
+  background-color: var(--color-secondary);
+  font-family: var(--font-primary);
+  box-shadow: 0 0.1rem 0.8rem var(--shadow-04);
+}
