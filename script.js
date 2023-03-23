@@ -1,3 +1,9 @@
+window.onload = () => {
+  setTimeout(() => {
+    document.querySelector("body").classList.add("display");
+  }, 4000);
+};
+
 // open or close header menu
 document.querySelector(".hamburger-menu").addEventListener("click", () => {
   document.querySelector(".container").classList.toggle("change");
