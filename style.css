@@ -3,6 +3,7 @@
 @import url("./assets/css/layouts/header.css");
 @import url("./assets/css/layouts/about-us.css");
 @import url("./assets/css/layouts/team.css");
+@import url("./assets/css/layouts/contact-footer.css");
 
 /* reset some defult styles */
 * {
