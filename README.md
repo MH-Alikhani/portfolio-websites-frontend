@@ -25,7 +25,7 @@ Below are screenshots of the website on desktop, tablet, and mobile. (I suggest 
 
 <h3 style="font-weight: bold;"> Website View For Tablet</h3>
 
-![Screen Shot](<./screenshots/screenshot(ipad).png>)
+![Screen Shot](<./screenshots/screenshot(iPad).png>)
 <br>
 
 <h3 style="font-weight: bold;"> Website View For Mobile</h3>
