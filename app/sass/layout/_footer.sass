@@ -1,0 +1,28 @@
+footer
+    @extend %centering
+    color: #fff
+    flex-wrap: wrap
+    padding: 3.5rem 5rem
+    justify-content: space-between
+    background: var.$color-primary
+    > .footer-logo
+        width: 15rem
+    > address
+        color: transparentize(#fff,.3 )
+        font:
+            size: 1.8rem
+            weight: 400
+        > a
+            margin-right: 1.5rem
+
+    // responsive
+    @media screen and (max-width:768px)
+        justify-content: center
+        > address
+            display: flex
+            flex-wrap: wrap
+            margin-top: 2rem
+            align-items: center
+            justify-content: center
+            > a , span
+                margin-top: 1rem

@@ -1,0 +1,131 @@
+> .hero
+    @extend %centering
+    height: 90%
+    width: 100%
+    color: #fff
+
+    // devided hero to two side
+    > div
+        height: 100%
+
+        // right side of hero
+        &:nth-child(1)
+            width: 45%
+            // hero title
+            > h1
+                font-size: 7.2rem
+                line-height: 8.2rem
+                letter-spacing: .18rem
+                // typing text
+                > span
+                    white-space: nowrap
+                    // cursor
+                    &::after
+                        content: "|"
+                        animation: blink linear 1s infinite
+                        font:
+                            weight: 100
+                            size: larger
+            > .hero-desc
+                width: 90%
+                margin-top: 2rem
+                line-height: 3.2rem
+                letter-spacing: .05rem
+                font:
+                    weight: 500
+                    size: 1.8rem
+            > .hero-form
+                width: 100%
+                display: flex
+                margin-top: 2rem
+                > input
+                    @include mix.button()
+                    cursor: auto
+                    text-align: left
+                    padding-left: 1rem
+                    border: 1px solid #fff
+                    background-color: transparent
+                    &::placeholder
+                        color: rgba(255, 255, 255, 0.7)
+                > button
+                    margin-left: 1rem
+                    @include mix.button()
+                    &:hover
+                        background-color: lighten(var.$color-primary, 10%)
+            .hero-policy
+                @extend .hero-desc
+                font-size: 1.5rem
+                > a
+                    text-decoration: 1px solid underline #fff
+
+        // left side of hero
+        &:nth-child(2)
+            @extend %centering
+            justify-content: flex-end
+            width: 55%
+            > img
+                height: 100%
+
+    // responsive
+    @include mix.lg-screen()
+        > div
+            height: 490px
+
+    @include mix.md-screen()
+        > div
+            // right side of hero
+            &:nth-child(1)
+                width: 50%
+                display: flex
+                flex-direction: column
+                justify-content: center
+                > h1
+                    font-size: 4vw
+                    line-height: 4.5vw
+                >.hero-form
+                    flex-wrap: wrap
+                    > input, button
+                        width: 100%
+                        &:last-child
+                            margin: 1rem 0 0 0
+            // left side of hero
+            &:nth-child(2)
+                width: 50%
+                justify-content: flex-end
+                > img
+                    height: auto
+                    width: 80%
+
+    @media screen and (max-width: 768px)
+        flex-direction: column
+        > div
+            text-align: center
+            width: 100% !important
+            // right side of hero
+            &:nth-child(1)
+                > h1
+                    text-align: center
+                    font-size: 4rem
+                    line-height: 4rem
+                    letter-spacing: auto
+                    // width: 100%
+                > .hero-desc
+                    width: 100%
+                > .hero-form
+                    flex-direction: column
+                    >button
+                        margin: 1rem 0 0 0
+                > .hero-policy
+                    width: 100%
+            // right side of hero
+            &:nth-child(2)
+                justify-content: center
+                > img
+                    height: auto
+                    width: 200px
+                    transform: translateY(20%)
+
+    @include mix.tablet()
+        div:nth-child(2)
+            img
+                width: 300px

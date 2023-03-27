@@ -1,0 +1,55 @@
+> .our-vision
+    @extend %centering
+    color: #fff
+    padding: 15rem 0
+    overflow: hidden
+    text-align: center
+    width: 100% !important
+    background-color: #12152F
+
+    // to wrap content with width of 1000px
+    > div
+        @extend %centering
+        position: relative
+        flex-direction: column
+        width: 1000px
+        > h2
+            font-size: 16.2rem
+            margin-bottom: 10rem
+            letter-spacing: .4rem
+        > p
+            width: 58%
+            line-height: 4rem
+            text-align: justify
+            font:
+                weight: 400
+                size: 2.4rem
+            &:not(:last-child)
+                margin-bottom: 4rem
+        // two imgs in both side of wrapper (lego and rocket)
+        > img
+            position: absolute
+            top: 0
+            &:nth-child(1)
+                right: -10%
+                width: 320px
+                transform: translateY(-30%)
+            &:nth-child(2)
+                left: 0
+                width: 440px
+                transform: translate(-50%, -40%)
+    // responsive
+    @media screen and (max-width:768px)
+        padding: 5rem 0
+        >div
+            padding: 0 2rem
+            width: 100%
+            > h2
+                font-size: 5rem
+                margin-bottom: 5rem
+            > p
+                width: 100%
+                font-size: 2rem
+                text-align: center
+            > img
+                display: none

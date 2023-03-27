@@ -1,0 +1,39 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+a
+    color: inherit
+    text-decoration: none
+
+header,footer
+    padding: 0 8vw
+
+main > section
+    padding: 0 8vw
+
+// reponsive
+@include mix.lg-screen()
+    header,main,footer
+        padding: 0 0
+    section
+        width: 1200px !important
+
+@include mix.md-screen()
+    html
+        font-size: 9px
+
+@include mix.tablet()
+    html
+        font-size: 9px
+
+@include mix.mobile()
+    html
+        font-size: 7px
+
+// scrollbar
+::-webkit-scrollbar
+    width: 5px
+::-webkit-scrollbar-thumb
+    background: var.$color-primary

@@ -1,0 +1,74 @@
+> nav
+    @extend %centering
+    top: 0
+    left: 0
+    z-index: 10
+    position: fixed
+    justify-content: space-between
+    width: 100%
+    padding: 2rem 8vw 0 8vw
+    height: 10%
+
+    // logo and left button
+    > div
+        @extend %centering
+
+        > .header-logo
+            color: #fff
+            height: 3rem
+            margin-right: 1.4rem
+
+        // left button
+        > button
+            @include mix.button(5px,#3A51E9, 2px 12px,1.2rem)
+                line-height: 24px
+                border: 2px solid rgba(255, 255, 255, 0.2)
+
+            > i
+                margin-left: .8rem
+                font-size: smaller
+                transition: all linear .1s
+            &:hover > i
+                transform: translateX(2px)
+
+    // right button
+    > button
+        @include mix.button(12px)
+        &:hover
+            background-color: lighten(var.$color-primary, 10%)
+
+    // reponsive
+    @include mix.lg-screen()
+        padding: 2rem 0 0 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 1200px
+
+    @include mix.md-screen()
+        padding: 2rem 3rem 0 3rem
+
+    @media screen and (max-width: 768px)
+        padding: 1rem
+        position: absolute
+        > div
+            > .header-logo
+                height: 3rem
+            > button
+                display: none
+        // right button
+        >button
+            font-size: 1.2rem
+
+    @include mix.tablet()
+        padding: 0
+        margin: 1rem 0 5rem 0
+        position: relative
+
+    @include mix.mobile()
+        padding: 0
+        margin: 1rem 0 5rem 0
+        position: relative
+
+    @media screen and (max-width: 350px)
+        > button
+            display: none

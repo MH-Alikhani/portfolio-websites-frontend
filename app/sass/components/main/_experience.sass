@@ -1,0 +1,84 @@
+> .experience
+    position: relative
+    @extend %centering
+    text-align: center
+    flex-direction: column
+    width: 100% !important
+    height: 100vh
+    background: var.$color-secondary
+    color: #fff
+    z-index: 1
+    > h2
+        width: 70%
+        font-size: 7.2rem
+        line-height: 8rem
+        letter-spacing: 0.18rem
+    > p
+        font-size: 2rem
+        line-height: 2rem
+        margin: 2rem 0 3rem 0
+
+    > .experince-form
+        @extend %centering
+        flex-direction: column
+        > form
+            width: 100%
+            display: flex
+            margin-top: 2rem
+            > input
+                @include mix.button()
+                cursor: auto
+                text-align: left
+                padding-left: 1rem
+                border: 1px solid #fff
+                background-color: transparent
+                &::placeholder
+                    color: rgba(255, 255, 255, 0.7)
+            > button
+                @include mix.button()
+                margin-left: 1rem
+                &:hover
+                    background-color: lighten(var.$color-primary, 10%)
+        > p
+            margin-top: 2rem
+            font-size: 1.5rem
+            font-weight: 500
+            > a
+                text-decoration: 1px solid underline #fff
+
+    // both side of section images
+    > img
+        position: absolute
+        z-index: -1
+        height: 100%
+    .experience-img-right
+        left: 0
+    .experience-img-left
+        right: 0
+
+    // responsive
+    @media screen and (max-width:768px)
+        height: auto !important
+        padding: 10rem 0
+
+        > p
+            margin-bottom: 2rem
+        > .experince-form
+            > form
+                flex-direction: column
+                > input, button
+                    width: 100% !important
+                    margin: 0
+                button
+                    margin-top: 1rem
+    @include mix.mobile()
+        padding: 5rem 3rem
+        > h2
+            width: 100%
+            font-size: 3rem
+            line-height: 4rem
+        > p
+            width: 95%
+            font-size: 2rem
+        > img
+            display: none

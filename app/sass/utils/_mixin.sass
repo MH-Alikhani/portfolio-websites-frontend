@@ -1,0 +1,38 @@
+// responsive for large screen
+@mixin lg-screen()
+    @media screen and (min-width:1281px)
+        @content
+
+// responsive for medium screen
+@mixin md-screen()
+    @media screen and (min-width: 769px) and (max-width:1280px)
+        @content
+
+// responsive for tablet
+@mixin tablet()
+    @media screen and (min-width:481px) and (max-width: 768px)
+        @content
+
+// responsive for mobile
+@mixin mobile()
+    @media screen and (max-width:480px)
+        @content
+
+// button template
+@mixin button($border-radius: 8px, $bg : #111646, $padding: 1.3rem 2rem, $font-size:1.8rem)
+    display: flex
+    align-items: center
+    justify-content: center
+
+    border: none
+    outline: none
+    color: #fff
+    background: $bg
+    cursor: pointer
+    padding: $padding
+    font-size: $font-size
+    text:
+        align: center
+        shadow: 0 0 #0000
+    border-radius: $border-radius
+    @content
