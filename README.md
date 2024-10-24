@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CarHub: Elevating Web Experiences with Next.js, TypeScript & Tailwind CSS
 
-## Getting Started
+![CarHub Website Preview](/public/carhub-website.png)
 
-First, run the development server:
+Welcome to **CarHub**, a sleek, high-performance web platform designed to provide an unparalleled browsing experience for car enthusiasts and beyond. This project reflects my passion for creating dynamic, efficient, and visually captivating web applications using some of the most powerful tools in modern development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Highlights
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** – Delivering blazing-fast performance and seamless scalability, enabling the site to handle future growth with ease.
+- **TypeScript** – Ensuring type safety and robustness, allowing for maintainable and error-free code across all functionalities.
+- **Tailwind CSS** – Crafting responsive, elegant, and custom-styled components with speed and precision.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Explore the CarHub Experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+From browsing the latest car models to exploring detailed specifications, the CarHub website is engineered for smooth navigation, quick load times, and visually stunning layouts. Every component is built with purpose—whether it's the user-friendly interface or the fast, reactive architecture that powers it.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Experience the live demo here](https://carhub-portfolio.netlify.app/)
