@@ -1,66 +1,25 @@
 import { CarProps, FilterProps } from "@/types"
 
-const API_BASE_URL = "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars"
-const DEFAULT_HEADERS = {
-  "x-rapidapi-key": process.env.RAPIDAPI_KEY ?? "",
-  "x-rapidapi-host": process.env.RAPIDAPI_HOST ?? "",
-}
+export async function fetchCars(filters: FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters
 
-// Utility function to check if API credentials exist
-const checkApiCredentials = () => {
-  const apiKey = process.env.RAPIDAPI_KEY
-  const apiHost = process.env.RAPIDAPI_HOST
-  if (!apiKey || !apiHost) {
-    throw new Error(
-      "Missing API credentials: Ensure RAPIDAPI_KEY and RAPIDAPI_HOST are set in the environment."
-    )
-  }
-  return { apiKey, apiHost }
-}
-
-/**
- * Fetch cars based on the provided filters.
- * @param {FilterProps} filters - The car search filters.
- * @returns {Promise<any>} - The API response containing car data.
- */
-export async function fetchCars(filters: FilterProps): Promise<any> {
-  const { manufacturer, year, model, limit = 10, fuel } = filters
-
-  const { apiKey, apiHost } = checkApiCredentials()
-
-  const headers: Record<string, string> = {
-    "x-rapidapi-key": apiKey,
-    "x-rapidapi-host": apiHost,
+  const headers: HeadersInit = {
+    "X-RapidAPI-Key": process.env.RAPIDAPI_KEY || "",
+    "X-RapidAPI-Host": "cars-by-api-ninjas.p.rapidapi.com",
   }
 
-  try {
-    const queryParams = new URLSearchParams({
-      make: manufacturer ?? "",
-      year: year?.toString() ?? "",
-      model: model ?? "",
-      limit: limit.toString(),
-      fuel_type: fuel ?? "",
-    })
-
-    const response = await fetch(`${API_BASE_URL}?${queryParams}`, { headers })
-
-    if (!response.ok) {
-      throw new Error(`Error fetching cars: ${response.statusText}`)
+  const response = await fetch(
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    {
+      headers: headers,
     }
+  )
 
-    return await response.json()
-  } catch (error) {
-    console.error("Failed to fetch cars:", error)
-    throw error
-  }
+  const result = await response.json()
+
+  return result
 }
 
-/**
- * Generate the image URL for a specific car.
- * @param {CarProps} car - The car properties (make, model, year).
- * @param {string} [angle] - Optional angle of the car image.
- * @returns {string} - The generated image URL.
- */
 export const generateCarImageUrl = (car: CarProps, angle?: string): string => {
   const { make, year, model } = car
   const url = new URL("https://cdn.imagin.studio/getimage")
@@ -78,25 +37,14 @@ export const generateCarImageUrl = (car: CarProps, angle?: string): string => {
   return url.toString()
 }
 
-/**
- * Update the search parameters in the URL.
- * @param {string} type - The parameter type (e.g., 'make', 'model').
- * @param {string} value - The value to set for the parameter.
- * @returns {string} - The updated URL with new search parameters.
- */
-export const updateSearchParams = (type: string, value: string): string => {
+export const updateSearchParams = (type: string, value: string) => {
   const searchParams = new URLSearchParams(window.location.search)
   searchParams.set(type, value)
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`
 
-  return `${window.location.pathname}?${searchParams.toString()}`
+  return newPathname
 }
 
-/**
- * Calculate the rental cost per day for a car based on multiple factors.
- * @param {number} city_mpg - The car's city MPG (fuel efficiency).
- * @param {number} year - The car's manufacturing year.
- * @returns {string} - The calculated rental price per day.
- */
 export const calculateCarRent = (city_mpg: number, year: number): string => {
   const BASE_PRICE_PER_DAY = 50
   const MILEAGE_FACTOR = 0.15

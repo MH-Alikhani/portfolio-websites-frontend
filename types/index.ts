@@ -1,11 +1,43 @@
-import { Dispatch, SetStateAction, MouseEventHandler } from "react"
+import { MouseEventHandler } from "react"
 
-// Interface for props of the home component
-export interface IHomeProps {
-  searchParams: IFilterProps
+export interface CarProps {
+  city_mpg: number
+  class: string
+  combination_mpg: number
+  cylinders: number
+  displacement: number
+  drive: string
+  fuel_type: string
+  highway_mpg: number
+  make: string
+  model: string
+  transmission: string
+  year: number
 }
 
-export interface ICustomButtonProps {
+export interface FilterProps {
+  manufacturer?: string
+  year?: number
+  model?: string
+  limit?: number
+  fuel?: string
+}
+
+export interface HomeProps {
+  searchParams: FilterProps
+}
+
+export interface CarCardProps {
+  model: string
+  make: string
+  mpg: number
+  transmission: string
+  year: number
+  drive: string
+  cityMPG: number
+}
+
+export interface CustomButtonProps {
   isDisabled?: boolean
   btnType?: "button" | "submit"
   containerStyles?: string
@@ -15,51 +47,22 @@ export interface ICustomButtonProps {
   handleClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-// Interface for the search manufacturer component props
-export interface ISearchManufacturerProps {
-  manufacturer: string
-  setManufacturer: Dispatch<SetStateAction<string | null>>
-}
-
-// Interface for car properties
-export interface ICarProps {
-  city_mpg: number
-  class: string
-  combinationMpg: number
-  cylinders: number
-  displacement: number
-  drive: string
-  fuelType: string
-  highwayMpg: number
-  make: string
-  model: string
-  transmission: string
-  year: number
-}
-
-// Interface for filtering options in car searches
-export interface IFilterProps {
-  manufacturer: string
-  year: number
-  fuel: string
-  limit: number
-  model: string
-}
-
-// Interface for option data in dropdowns or selection menus
-export interface IOptionProps {
+export interface OptionProps {
   title: string
   value: string
 }
 
-// Interface for a custom filter component
-export interface ICustomFilterProps {
+export interface CustomFilterProps {
   title: string
-  options: IOptionProps[]
+  options: OptionProps[]
 }
 
-// Interface for "show more" button or pagination controls
-export interface IShowMoreProps {
+export interface ShowMoreProps {
   pageNumber: number
   isNext: boolean
+}
+
+export interface SearchManufacturerProps {
+  manufacturer: string
+  setManufacturer: (manufacturer: string) => void
 }

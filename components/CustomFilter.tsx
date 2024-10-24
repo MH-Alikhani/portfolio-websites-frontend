@@ -8,7 +8,7 @@ import {
   Transition,
 } from "@headlessui/react"
 import Image from "next/image"
-import { ICustomFilterProps } from "@/types"
+import { CustomFilterProps } from "@/types"
 import { useRouter } from "next/navigation"
 import { updateSearchParams } from "@/utils"
 import { useState, useCallback } from "react"
@@ -18,7 +18,7 @@ import { useState, useCallback } from "react"
  * @param {string} title - The title of the filter.
  * @param {Array} options - The array of options to display in the filter.
  */
-const CustomFilter = ({ title, options }: ICustomFilterProps) => {
+const CustomFilter = ({ title, options }: CustomFilterProps) => {
   const router = useRouter()
 
   const [selected, setSelected] = useState(options[0])

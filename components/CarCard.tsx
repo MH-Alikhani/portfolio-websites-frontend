@@ -2,13 +2,13 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import { ICarProps } from "@/types"
+import { CarProps } from "@/types"
 import CarDetails from "./CarDetails"
 import CustomButton from "./CustomButton"
 import { calculateCarRent, generateCarImageUrl } from "@/utils"
 
 interface ICarCardProps {
-  car: ICarProps
+  car: CarProps
 }
 
 const CarCard = ({ car }: ICarCardProps) => {
